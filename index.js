@@ -1,11 +1,14 @@
 
+
+console.log("Fuck off")
+
 counter=0;
 
 function myFunction() {
     counter= counter +1;
     
     console.log(document.getElementById("provjeri").value)
-
+   
     if (document.getElementById("provjeri").value.length <10)
      {
         document.getElementById("kurac").innerHTML = "neseri ispovjedaj se jos malo";
