@@ -5,32 +5,138 @@
 
 body
 {
-    background-color: rgb(71, 71, 71);
-    color: aliceblue;
-    margin-top: 300px;
-}
-
-.centriraj
-{
-   
-    position: relative;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: #B2B2B2;
 
 }
 
-h1
+
+.naslov
 {
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: -70px;
+    border-radius: 20px;
     text-align: center;
+    background-color: #DFE8CC;
+
 }
 
-
-.centriraj_ostalo
+.main
 {
     position: relative;
-    width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 100px;
     text-align: center;
+    height: 1000px;
+
+}
+
+
+.upisnica
+{
+    position: relative;
+    padding: 100%;
+    width: 400px;
+    border-radius: 20px;
+    background-color: rgb(170, 0, 0);
+
+}
+
+textarea {
+    resize: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    width: 1000px; 
+    height: 500px; 
+    border-radius: 5px;
+    font-size: 30px;
+    padding: 50px;
+
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 30px;
+  padding: 10px;
+}
+
+
+.grid-item {
+  padding: 20px;
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  background-color: #DFE8CC;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+
+}
+
+
+.tekst
+{
+    width: 100%;
+    text-align: left;
+    height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.button-28 {
+ 
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  will-change: transform;
+}
+
+.button-28:disabled {
+  pointer-events: none;
+}
+
+.button-28:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  
+  transform: translateY(-2px);
+}
+
+.button-28:active {
+  box-shadow: none;
+  transform: translateY(0);
 }
