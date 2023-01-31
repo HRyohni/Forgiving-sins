@@ -39,7 +39,20 @@ maxid = BP_DataRow("select max(id) from login;")
 
 
 @app.route("/", methods = ['GET', 'POST'])
-def oprema():
+def main():
+    if request.method == "POST":
+        grijeh = request.form['grijeh']
+       
+        #BP_Command("insert into login values ( 12 ,'"+username+"','"+password+"');")
+        print(grijeh)
+
+   
+
+    return render_template('index.html')
+
+
+@app.route("/login", methods = ['GET', 'POST'])
+def login():
     if request.method == "POST":
         username = request.form['username']
         password = request.form['password']
@@ -47,8 +60,6 @@ def oprema():
         print("done")
 
     return render_template('login.html')
-
-
 
 if __name__ == "__main__":
     app.run(debug = True)

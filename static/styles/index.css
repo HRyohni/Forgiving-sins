@@ -56,6 +56,7 @@ textarea {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
+
   column-gap: 30px;
   padding: 10px;
 }
@@ -84,18 +85,69 @@ textarea {
 
 
 
+.grid5
+{
+  
+  display: grid;
+  grid-template-columns:auto auto auto auto ;
+  text-align: center;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  
+}
 
 
 
+.grid5-item {
+  padding: 20px;
+  border-right: 2px solid #1A1A1A;
+  font-size: 30px;
+
+  text-align: center;
+  
+ 
+
+}
 
 
 
+i 
+{
+  font-size: 20px;
+  color: #808080;
+}
 
 
 
+.bottom
+{
+  width: 100%;
+  background-color: #1d1d1d;
+  height: 100px;
+}
 
 
+.QA
+{
+  
 
+  text-align: left;
+  background-color: white;
+ 
+  padding: 20px;
+  margin-top: 250px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+
+
+a
+{
+  text-decoration: none;
+  color: black;
+}
 
 .button-28 {
  
@@ -139,4 +191,56 @@ textarea {
 .button-28:active {
   box-shadow: none;
   transform: translateY(0);
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  font-size: 15px;
+
+  min-width: 160px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+
+
+
+.collapsible {
+  background-color: white;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+ 
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  
 }
