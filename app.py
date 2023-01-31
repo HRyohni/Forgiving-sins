@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request,redirect
+from grijehovi import grijesi
 import mysql.connector
 
 
 app = Flask(__name__)
-
 
 
 def BP_Command(sql):
@@ -37,18 +37,27 @@ maxid = BP_DataRow("select max(id) from login;")
 
 
 
-
 @app.route("/", methods = ['GET', 'POST'])
 def main():
-    if request.method == "POST":
-        grijeh = request.form['grijeh']
-       
-        #BP_Command("insert into login values ( 12 ,'"+username+"','"+password+"');")
-        print(grijeh)
+    brGrijeha=0
 
+    if request.method == "POST":
+        count=0
+        grijeh = request.form['grijeh']
+        
+        for x in grijesi:
+            if x.lower() in grijeh.lower():
+                count+=1
+                print("f")
+        print("found "+ str(count)+ " Grijeha")
+        brGrijeha = count
+        return render_template('resault.html',brGrijeha=brGrijeha)
+
+        #BP_Command("insert into login values ( 12 ,'"+username+"','"+password+"');")
+    
    
 
-    return render_template('index.html')
+    return render_template('index.html',brGrijeha=brGrijeha)
 
 
 @app.route("/login", methods = ['GET', 'POST'])
@@ -60,6 +69,13 @@ def login():
         print("done")
 
     return render_template('login.html')
+
+
+@app.route("/resault", methods = ['GET', 'POST'])
+def resault():
+
+    return render_template('resault.html')
+
 
 if __name__ == "__main__":
     app.run(debug = True)
