@@ -15,9 +15,13 @@ drop table login;
 CREATE table login (
     id INTEGER PRIMARY KEY,
     username VARCHAR(60) NOT NULL,
-    passwordd VARCHAR(60) NOT NULL
+    passwordd VARCHAR(60) NOT NULL,
+    stanje VARCHAR(60),
+    grijesi VARCHAR(60),
+    brGrijeha INTEGER
 );
-
+select max(id) from login;
+select * from login;
 drop trigger kriptiranje;
 
 DELIMITER //
@@ -30,12 +34,12 @@ BEGIN
 END//
 DELIMITER ;
 
-insert into grijesi values ( 1 ,"test","test","kuis");
-insert into login values ( 1 ,"test","test");
-insert into login values ( 2,"test","test");
-insert into login values ( 3 ,"test","test");
+insert into login values ( 1 ,"test","test","kuis","asdasd","asdasd");
+insert into login values ( 3 ,"test","test","kuis","asdasd","asdasd");
+
 
 select * from login;
+
 select * from grijesi;
 
-select max(id) from login;
+select max(id) from login limit 1;

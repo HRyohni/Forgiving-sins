@@ -13,6 +13,11 @@ grijesi =[
 "blud",
 "Neumjerenost",
 "Lijenost",
+"uljen",
+"ignori",
+"tuč",
+"tuc",
+"trebalo",
 "Gorljiv",
 "kur",
 "jeb",
@@ -25,6 +30,7 @@ grijesi =[
 "lezb",
 "ubiti",
 "uboj",
+"ubi",
 "gej",
 "gay",
 "izdaj",
@@ -50,4 +56,6 @@ grijesi =[
 "trača",
 "ogovara",
 "incest",
+"nevin"
+
 ]

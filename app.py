@@ -15,14 +15,14 @@ def BP_Command(sql):
 
     # Get data row from Database
 def BP_DataRow(sql):
-    vojska = mysql.connector.connect(host = 'localhost', database = 'vojska', user = 'root', password = 'root')
+    vojska = mysql.connector.connect(host = 'localhost', database = 'grijeh', user = 'root', password = 'root')
     MainKursor = vojska.cursor()
     MainKursor.execute(sql)
     return MainKursor.fetchone()
 
     # get data ALL from Database
 def BP_DataAll(sql):
-    vojska =  mysql.connector.connect(host = 'localhost', database = 'vojska', user = 'root', password = 'root')
+    vojska =  mysql.connector.connect(host = 'localhost', database = 'grijeh', user = 'root', password = 'root')
     MainKursor = vojska.cursor()
     MainKursor.execute(sql)
     return  MainKursor.fetchall()
@@ -60,16 +60,42 @@ def main():
     return render_template('index.html',brGrijeha=brGrijeha)
 
 
-@app.route("/login", methods = ['GET', 'POST'])
-def login():
+@app.route("/register", methods = ['GET', 'POST'])
+def Register():
+    action = "Register"
+
+        # Register
     if request.method == "POST":
         username = request.form['username']
         password = request.form['password']
-        BP_Command("insert into login values ( 12 ,'"+username+"','"+password+"');")
-        print("done")
+        
+        maxID = BP_DataRow("select max(id) from login;")
+        BP_Command("insert into login values ( "+str(maxID[0]+1)+  " ,'"+username+"','"+password+"','Standard','',0);")
+    return render_template('login.html',action=action)
 
-    return render_template('login.html')
 
+
+@app.route("/login", methods = ['GET', 'POST'])
+def Login():
+    action = "Login"
+    desc=""
+
+        # login
+    if request.method == "POST":
+        username = request.form['username']
+        password = request.form['password']
+            #find data
+        exsists = BP_DataRow("select * from login where username = '"+ username +"' and passwordd = md5('"+ password +"');")
+        if exsists:
+            return render_template('index.html',action=action,username=username,desc = desc)
+        else:
+            desc="wrong password or username try again."
+            return render_template('login.html',action=action,desc=desc)                    
+
+
+
+         
+    return render_template('login.html',action=action)
 
 @app.route("/resault", methods = ['GET', 'POST'])
 def resault():
@@ -78,4 +104,4 @@ def resault():
 
 
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.run(host='0.0.0.0', port=80)
