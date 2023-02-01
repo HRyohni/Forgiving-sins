@@ -1,21 +1,22 @@
 *
 {
     font-family:Verdana, Geneva, Tahoma, sans-serif ;
+   
 }
 
 body
 {
-    background-color: #B2B2B2;
-
+    background-color: #d6f5ef;
+    padding: 0px;
+    margin: 0px;
 }
 
 
 .naslov
 {
-    margin-left: -10px;
-    margin-right: -10px;
-    margin-top: -70px;
-    border-radius: 20px;
+
+    width: 100%;
+    border-radius: 10px;
     text-align: center;
     background-color: #DFE8CC;
 
@@ -26,7 +27,7 @@ body
     position: relative;
     padding: 100px;
     text-align: center;
-    height: 200px;
+    height: 100%;
 
 }
 
@@ -44,21 +45,31 @@ body
 textarea {
     resize: none;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-    width: 1000px;
-    height: 500px;
+    height: 30vw;
+    padding: 20px;
+    width: 80%;
+    
+
     border-radius: 5px;
     font-size: 30px;
-    padding: 50px;
+   
+    
+
+
 
 }
 
+.wraper
+{
+ 
+}
 
 .grid-container {
   display: grid;
+  margin-top: 30px;
   grid-template-columns: auto auto auto;
-
-  column-gap: 30px;
-  padding: 10px;
+  background-color: #E28743;
+  
 }
 
 
@@ -67,9 +78,11 @@ textarea {
   font-size: 30px;
   margin-left: auto;
   margin-right: auto;
-  width: 400px;
+ 
+  width: 20vw;
   background-color: #DFE8CC;
   text-align: center;
+  font-size: 2vw;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
 
@@ -94,8 +107,11 @@ textarea {
 {
 
   display: grid;
-  grid-template-columns:auto auto auto auto ;
+  grid-template-columns: auto auto auto auto ;
+  
   text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
   padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   border-radius: 5px;
@@ -106,9 +122,11 @@ textarea {
 
 
 .grid5-item {
-  padding: 20px;
+  padding: 5px;
+  height: 120px;
   border-right: 2px solid #1A1A1A;
-  font-size: 30px;
+  font-size: 100%;
+ 
 
   text-align: center;
 
@@ -120,7 +138,7 @@ textarea {
 
 i
 {
-  font-size: 20px;
+  font-size: 3vw;
   color: #808080;
 }
 
@@ -140,11 +158,15 @@ i
 
   text-align: left;
   background-color: white;
-
+  font-size: 4vw;
   padding: 20px;
   margin-top: 250px;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+.QA h1
+{
+  font-size: 6vw;
 }
 
 
@@ -154,24 +176,27 @@ a
   color: black;
 }
 
+
+form
+{
+  font-size: 1vw;
+}
 .button-28 {
 
   appearance: none;
   background-color: transparent;
-  border: 2px solid #1A1A1A;
-  border-radius: 15px;
-  box-sizing: border-box;
+  border: 1px solid #1A1A1A;
+  border-radius: 5px;
+  
+  height: fit-content;
   color: #3B3B3B;
   cursor: pointer;
   display: inline-block;
-  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 5vw;
+
   line-height: normal;
-  min-height: 60px;
-  min-width: 0;
   outline: none;
-  padding: 16px 24px;
+  padding: 1vw 2vw;
   text-align: center;
   text-decoration: none;
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
@@ -250,29 +275,29 @@ a
 
 }
 
-
-
-#snackbar {
-  visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 2px;
-  padding: 16px;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  bottom: 30px;
-  font-size: 17px;
+@media (max-width: 989px) 
+{
+   .grid-container
+   {
+    display:contents;
+    width: 100%;
+    
+   }
+   .grid-item
+   {
+       margin-top: 20px;
+       width: 70%;
+   }
+   .button-28
+   {
+    margin-bottom: 20px;
+   }
 }
 
-#snackbar.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
+
+
+
+
 
 @-webkit-keyframes fadein {
   from {bottom: 0; opacity: 0;} 

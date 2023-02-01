@@ -10,34 +10,33 @@
     <title>Ispovijed</title>
 </head>
 <body>
+<div class="wraper">
+
 
 <div style="box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;" class="naslov">
 
     <br>
     {%if username%}
-    <a href="login"><button style = "margin-top: 50px; margin-left: 90%;" class="button-28" role="button"> Sign out</button></a>
+    <a href="login"><button style = "margin-top: 50px; " class="button-28" role="button"> Sign out</button></a>
     {%else%}
-    <a href="login"><button style = "margin-top: 50px; margin-left: 90%;" class="button-28" role="button">Login</button></a>
+    <a href="login"><button style = "margin-top: 50px;" class="button-28" role="button">Login</button></a>
     {%endif%}
 
 
-    <h1 style="font-size: 100px; ">Onaj koji oprašta</h1>
+    <h1 style="font-size: 5vw; ">Onaj koji oprašta</h1>
     <h3>{{username}}</h3>
      <h3>Ovdje će ti svi grijesi biti oprošteni</h3>
     <form method="POST" >
-      <textarea name="grijeh" placeholder="Upiši grijehe" type="text"></textarea>
+      <textarea style="font-size: 5vw;" name="grijeh" placeholder="Upiši grijehe" type="text"></textarea>
       <br>
      
-        <button  style = "margin-top: 50px; margin-left: 800px; margin-bottom: 50px;"  class="button-28" role="button">Forgive me</button>
+        <button  style = "margin-left: 50%; margin-top: 30px; margin-bottom: 20px;"  class="button-28" role="button">Forgive me</button>
       
     </form>
 
-   
-    
-    <div id="snackbar">Some text some message..</div>
 </div>
 
-<div class="main">
+
   <div class="grid-container">
    <div class="grid-item">
     <div style = "background-color: #E28743;" class="rectangle"></div>
@@ -76,11 +75,11 @@
      </div>
    </div>
  </div>
-</div>
 
 
 
-<div style="margin-top: 250px;" class="grid5">
+
+<div  style="margin-top: 250px;" class="grid5">
   <div class="grid5-item">
     <br>
   </div>
@@ -98,13 +97,13 @@
     <br>
   </div>
   <div style="height: 50px;" class="grid5-item">
-    <button style = "background-color: #E28743;  color: white; border: none;  " class="button-28" >Current Plan</button>
+    <button style = "background-color: #E28743;  color: white; border: none; font-size: 1vw;  " class="button-28" >Current Plan</button>
   </div>
   <div style="height: 50px;" class="grid5-item">
-    <button style = "background-color: #549420; color: white; border: none; " class="button-28" role="button">Current Plan</button>
+    <button style = "background-color: #549420; color: white; border: none; font-size: 1vw;" class="button-28" role="button">Current Plan</button>
   </div>
   <div style="height: 50px;" class="grid5-item">
-    <button style = "background-color: #8952bd; color: white; border: none; " class="button-28" role="button">Current Plan</button>
+    <button style = "background-color: #8952bd; color: white; border: none; font-size: 1vw;" class="button-28" role="button">Current Plan</button>
   </div>
 
   <div style = "text-align: left;"class="grid5-item">
@@ -201,25 +200,17 @@ The Monthly Plan allows you to forgive more sins than once per day, for each sin
   <div class="content">
     <p>The Premium Plan gives you a direct ticket to heaven, but under the strict obligation that you have to confess all your sins that you have ever committed in your life and at the same time try very hard to sin them again as little as possible..</p>
   </div>
-  <hr>
+ 
 
 </div>
 
 
 <div style="margin-top: 250px;" class="bottom">
-  <h1 style="background-color: #1d1d1d; color: white;">Sponsors</h1>
-<div style="color: white; background-color: #1d1d1d;  border-radius: 10px; font-size: 10px;" class="grid5">
-
-  <h1>koka kola</h1>
-  <h1>hubGit</h1>
-  <h1>wow</h1>
-  <h1>toktik</h1>
-
+  <h1 style="background-color: #1d1d1d; color: white; font-size: 10vw; text-align: center;">Suport us on Paypal</h1>
 
 </div>
+
 </div>
-
-
 
 
 
