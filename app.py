@@ -3,7 +3,10 @@ from grijehovi import grijesi
 import mysql.connector
 
 
+
+
 app = Flask(__name__)
+
 
 
 def BP_Command(sql):
@@ -66,6 +69,7 @@ def Register():
 
         # Register
     if request.method == "POST":
+
         username = request.form['username']
         password = request.form['password']
         
@@ -82,15 +86,38 @@ def Login():
 
         # login
     if request.method == "POST":
-        username = request.form['username']
-        password = request.form['password']
-            #find data
-        exsists = BP_DataRow("select * from login where username = '"+ username +"' and passwordd = md5('"+ password +"');")
-        if exsists:
-            return render_template('index.html',action=action,username=username,desc = desc)
-        else:
-            desc="wrong password or username try again."
-            return render_template('login.html',action=action,desc=desc)                    
+        if 'username' in request.form and 'password' in request.form:
+            global username
+            global password
+            username = request.form['username']
+            password = request.form['password']
+
+
+                #find user
+            exsists = BP_DataRow("select * from login where username = '"+ username +"' and passwordd = md5('"+ password +"');")
+            if exsists:
+                #Get User Data
+
+                return render_template('index.html',action=action,username=username,desc = desc,exsists=exsists)
+            else:
+                desc="wrong password or username try again."
+                return render_template('login.html',action=action,desc=desc)
+
+
+
+        elif 'grijeh' in request.form:
+
+            count=0
+            grijeh = request.form['grijeh']
+            for x in grijesi:
+                if x.lower() in grijeh.lower():
+                    count+=1
+                    print("f")
+            print("found "+ str(count)+ " Grijeha")
+            brGrijeha = count
+            BP_Command("Update login SET brGrijeha = brGrijeha+ "+count+" , grijesi='"+grijeh+"' where username = '"+ username +"' and passwordd = md5('"+ password +"');")
+            return render_template('resault.html',brGrijeha=brGrijeha)
+
 
 
 
@@ -104,5 +131,5 @@ def resault():
 
 
 if __name__ == "__main__":
-    #app.run(debug = True)
-    app.run(host='0.0.0.0', port=80)
+    app.run(debug = True)
+    #app.run(host='0.0.0.0', port=80)

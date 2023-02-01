@@ -42,12 +42,18 @@ body
 
 }
 
+.align-button
+{
+  width: 100%;
+  background-color: #79a123;
+}
 textarea {
     resize: none;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     height: 30vw;
     padding: 20px;
     width: 80%;
+    font-size: 5vw;
     
 
     border-radius: 5px;
@@ -192,7 +198,7 @@ form
   color: #3B3B3B;
   cursor: pointer;
   display: inline-block;
-  font-size: 5vw;
+  font-size: 1vw;
 
   line-height: normal;
   outline: none;
@@ -291,6 +297,7 @@ form
    .button-28
    {
     margin-bottom: 20px;
+    font-size: 5vw;
    }
 }
 

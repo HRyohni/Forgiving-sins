@@ -16,18 +16,25 @@
 <div style="box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;" class="naslov">
 
     <br>
-    {%if username%}
-    <a href="login"><button style = "margin-top: 50px; " class="button-28" role="button"> Sign out</button></a>
-    {%else%}
-    <a href="login"><button style = "margin-top: 50px;" class="button-28" role="button">Login</button></a>
-    {%endif%}
-
+    <div class="align-button">
+      {%if username%}
+      <a href="login"><button style = "margin-top: 50px;  " class="button-28" role="button"> Sign out</button></a>
+      {%else%}
+      <a href="login"><button style = "margin-top: 10px; margin-left: max-content; " class="button-28" role="button">Login</button></a>
+      {%endif%}
+  
+    </div>
+    
 
     <h1 style="font-size: 5vw; ">Onaj koji oprašta</h1>
-    <h3>{{username}}</h3>
+    {%if username%}
+    <h3>Welcome <b>{{username}}</b></h3>
+    <h4>{{exsists[3]}} Edition</h4>
+    <h5>nummber of sins: {{exsists[5]}}</h5>
+    {%endif%}
      <h3>Ovdje će ti svi grijesi biti oprošteni</h3>
     <form method="POST" >
-      <textarea style="font-size: 5vw;" name="grijeh" placeholder="Upiši grijehe" type="text"></textarea>
+      <textarea style="font-size: 2vw;" name="grijeh" placeholder="Upiši grijehe" type="text"></textarea>
       <br>
      
         <button  style = "margin-left: 50%; margin-top: 30px; margin-bottom: 20px;"  class="button-28" role="button">Forgive me</button>
