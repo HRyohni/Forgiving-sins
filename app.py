@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request,redirect
 from grijehovi import grijesi
+import random
 import mysql.connector
 
 
@@ -30,8 +31,17 @@ def BP_DataAll(sql):
     MainKursor.execute(sql)
     return  MainKursor.fetchall()
 
-
     # getting max id
+
+def pokora(brGrijeha):
+
+    molitve = ['Oče naš', 'zdravo marijo','slava ocu']
+    x = brGrijeha
+    a  = random.randint(0,2)
+    
+    if x == 1:
+        return print("Za pokoru moraš izmoliti:", a , random.choice(molitve))
+
 
 
 print(BP_DataRow("select max(id) from login;"))
@@ -105,7 +115,7 @@ def Login():
 
 
 
-        elif 'grijeh' in request.form:
+        if 'grijeh' in request.form:
 
             count=0
             grijeh = request.form['grijeh']
@@ -113,7 +123,7 @@ def Login():
                 if x.lower() in grijeh.lower():
                     count+=1
                     print("f")
-            print("found "+ str(count)+ " Grijeha")
+            print("found "+ str(count) + " Grijeha")
             brGrijeha = count
             BP_Command("Update login SET brGrijeha = brGrijeha+ "+count+" , grijesi='"+grijeh+"' where username = '"+ username +"' and passwordd = md5('"+ password +"');")
             return render_template('resault.html',brGrijeha=brGrijeha)
@@ -133,3 +143,6 @@ def resault():
 if __name__ == "__main__":
     app.run(debug = True)
     #app.run(host='0.0.0.0', port=80)
+
+
+

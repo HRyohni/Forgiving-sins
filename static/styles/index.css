@@ -1,12 +1,12 @@
 *
 {
-    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+  font: italic 1.2em "Fira Sans", serif;
    
 }
 
 body
 {
-    background-color: #d6f5ef;
+    background-color: #B2B2B2;
     padding: 0px;
     margin: 0px;
 }
@@ -16,9 +16,11 @@ body
 {
 
     width: 100%;
+   
     border-radius: 10px;
     text-align: center;
     background-color: #DFE8CC;
+    
 
 }
 
@@ -45,19 +47,21 @@ body
 .align-button
 {
   width: 100%;
-  background-color: #79a123;
+  margin-left: auto;
+  
 }
+
 textarea {
     resize: none;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     height: 30vw;
     padding: 20px;
     width: 80%;
-    font-size: 5vw;
+   
     
 
     border-radius: 5px;
-    font-size: 30px;
+    font-size: 2vw;
    
     
 
@@ -74,7 +78,7 @@ textarea {
   display: grid;
   margin-top: 30px;
   grid-template-columns: auto auto auto;
-  background-color: #E28743;
+ 
   
 }
 
@@ -114,7 +118,7 @@ textarea {
 
   display: grid;
   grid-template-columns: auto auto auto auto ;
-  
+ 
   text-align: center;
   margin-left: 5%;
   margin-right: 5%;
@@ -144,7 +148,8 @@ textarea {
 
 i
 {
-  font-size: 3vw;
+  margin-top: 30px;
+  font-size: 1vw;
   color: #808080;
 }
 
@@ -153,7 +158,7 @@ i
 .bottom
 {
   width: 100%;
-  background-color: #1d1d1d;
+  background-color: #3C4048;
   height: 100px;
 }
 
@@ -164,7 +169,7 @@ i
 
   text-align: left;
   background-color: white;
-  font-size: 4vw;
+  font-size: 1vw;
   padding: 20px;
   margin-top: 250px;
   border-radius: 6px;
@@ -172,7 +177,7 @@ i
 }
 .QA h1
 {
-  font-size: 6vw;
+  font-size: 1vw;
 }
 
 
@@ -258,6 +263,33 @@ form
 
 
 
+.popup
+
+{
+  display: none;
+  position: fixed;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 10%;
+  z-index: 3000000;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: rgb(0, 0, 0) 0px 8px 15px;
+  width: 1000px;
+  height: 300px;
+  background-color: white;
+}
+
+
+.close-button
+{
+  position: fixed;
+  margin-left: 45%;
+
+}
+
+
+
 .collapsible {
   background-color: white;
   color: rgb(0, 0, 0);
@@ -299,9 +331,36 @@ form
     margin-bottom: 20px;
     font-size: 5vw;
    }
+   i
+  {
+  font-size: 3vw;
+ 
+  }
+  .QA h1
+  {
+    font-size: 3vw;
+  }
+  .content
+  {
+    font-size: 2vw;
+  }
+  textarea
+  {
+    font-size: 4vw;
+  }
+  img
+  {
+    width: 50vw;
+  }
+  .grid5
+  {
+    font-size: 3vw;
+  }
+
 }
 
-
+img
+{width: 20vw;}
 
 
 

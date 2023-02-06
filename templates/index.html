@@ -10,6 +10,32 @@
     <title>Ispovijed</title>
 </head>
 <body>
+
+<div class="popup" id="myDIV">
+  <div class="callout" data-closable>
+    <button onclick="myFunction()" class="close-button" aria-label="Close alert" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  <h1>You are getting All Editions</h1>
+  <p>Thank you for donating to our page </p>
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Saved buttons use the "secure click" command -->
+    <input type="hidden" name="cmd" value="_s-xclick">
+  
+    <!-- Saved buttons are identified by their button IDs -->
+    <input type="hidden" name="hosted_button_id" value="221">
+  
+    <!-- Saved buttons display an appropriate button image. -->
+    <input type="image" name="submit"
+      src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+      alt="PayPal - The safer, easier way to pay online">
+    <img alt="" width="1" height="1"
+      src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+  
+  </form>
+</div>
+</div>
 <div class="wraper">
 
 
@@ -26,7 +52,9 @@
     </div>
     
 
-    <h1 style="font-size: 5vw; ">Onaj koji oprašta</h1>
+    <h1 style="font-size: 5vw; ">"Onaj koji oprašta"</h1>
+    <img  src="../static/img/ico.png" alt="">
+    <hr style="margin-top: -10px; border: 1px solid #3C4048;">
     {%if username%}
     <h3>Welcome <b>{{username}}</b></h3>
     <h4>{{exsists[3]}} Edition</h4>
@@ -34,7 +62,7 @@
     {%endif%}
      <h3>Ovdje će ti svi grijesi biti oprošteni</h3>
     <form method="POST" >
-      <textarea style="font-size: 2vw;" name="grijeh" placeholder="Upiši grijehe" type="text"></textarea>
+      <textarea  name="grijeh" placeholder="Upiši grijehe" type="text"></textarea>
       <br>
      
         <button  style = "margin-left: 50%; margin-top: 30px; margin-bottom: 20px;"  class="button-28" role="button">Forgive me</button>
@@ -54,7 +82,7 @@
         <p style= "font-size: 16px;"> Free for trying thing out</p>
       </div>
 
-      <button style = "background-color: #E28743; margin-top: 50px;" class="button-28" role="button">Current Plan</button>
+      <button style = "background-color: #E28743; margin-top: 50px; color: white;border-color: #DFE8CC;" class="button-28" role="button">Current Plan</button>
 
 
     </div>
@@ -68,7 +96,7 @@
            <p style= "font-size: 16px;"> For you and your soul, with unlimited confeses and all monthly pro plan features.</p>
         </div>
     </div>
-    <button style = "background-color: #658D52; margin-top: 30px;" class="button-28" role="button">Monthly Plan</button>
+    <button style = "background-color: #658D52; margin-top: 30px; color: white;border-color: #DFE8CC;" class="button-28" role="button">Monthly Plan</button>
   </div>
 
   <div class="grid-item">
@@ -78,7 +106,7 @@
         <div class="tekst">
           <p style= "font-size: 16px;"> For you finding peace with your soul and free pass to heaven all monthly plan features included</p>
         </div>
-        <button style = "background-color: #6652DF; margin-top: 50px;" class="button-28" role="button">Premium Plan</button>
+        <button style = "background-color: #6652DF; margin-top: 50px; color: white;border-color: #DFE8CC;" class="button-28" role="button">Premium Plan</button>
      </div>
    </div>
  </div>
@@ -104,13 +132,13 @@
     <br>
   </div>
   <div style="height: 50px;" class="grid5-item">
-    <button style = "background-color: #E28743;  color: white; border: none; font-size: 1vw;  " class="button-28" >Current Plan</button>
+    <button onclick="myFunction()" style = "background-color: #E28743;  color: white; border: none; font-size: 1vw;  " class="button-28" >Current Plan</button>
+  </div>
+  <div  style="height: 50px;" class="grid5-item">
+    <button onclick="myFunction()" style = "background-color: #549420; color: white; border: none; font-size: 1vw;" class="button-28" role="button">Current Plan</button>
   </div>
   <div style="height: 50px;" class="grid5-item">
-    <button style = "background-color: #549420; color: white; border: none; font-size: 1vw;" class="button-28" role="button">Current Plan</button>
-  </div>
-  <div style="height: 50px;" class="grid5-item">
-    <button style = "background-color: #8952bd; color: white; border: none; font-size: 1vw;" class="button-28" role="button">Current Plan</button>
+    <button onclick="myFunction()" style = "background-color: #8952bd; color: white; border: none; font-size: 1vw;" class="button-28" role="button">Current Plan</button>
   </div>
 
   <div style = "text-align: left;"class="grid5-item">
@@ -180,7 +208,7 @@
 
 <div class="QA">
 
-  <h1 style="text-align: center;">Q&A</h1>
+  <h1 style="text-align: center;"><b>Q&A</b></h1>
 
 
 
@@ -213,7 +241,7 @@ The Monthly Plan allows you to forgive more sins than once per day, for each sin
 
 
 <div style="margin-top: 250px;" class="bottom">
-  <h1 style="background-color: #1d1d1d; color: white; font-size: 10vw; text-align: center;">Suport us on Paypal</h1>
+  <h1 style="background-color: #3C4048; color: white; font-size: 3vw; margin-top: auto; text-align: center;">Suport us on Paypal</h1>
 
 </div>
 
@@ -243,7 +271,14 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
-
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 
 
 </script>
