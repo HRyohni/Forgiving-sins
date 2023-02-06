@@ -34,13 +34,10 @@ def BP_DataAll(sql):
     # getting max id
 
 def pokora(brGrijeha):
-
-    molitve = ['Oče naš', 'zdravo marijo','slava ocu']
-    x = brGrijeha
-    a  = random.randint(0,2)
-    
-    if x == 1:
-        return print("Za pokoru moraš izmoliti:", a , random.choice(molitve))
+    if brGrijeha:
+        molitve = ['Oče naša', 'zdravo marijo','slava ocu']
+        return "Za pokoru moraš izmoliti: "+ str(random.randint(1,brGrijeha))+" "+str(random.choice(molitve))
+    return ""
 
 
 
@@ -92,6 +89,7 @@ def Register():
 @app.route("/login", methods = ['GET', 'POST'])
 def Login():
     action = "Login"
+   
     desc=""
 
         # login
@@ -122,11 +120,11 @@ def Login():
             for x in grijesi:
                 if x.lower() in grijeh.lower():
                     count+=1
-                    print("f")
-            print("found "+ str(count) + " Grijeha")
+                    
             brGrijeha = count
-            BP_Command("Update login SET brGrijeha = brGrijeha+ "+count+" , grijesi='"+grijeh+"' where username = '"+ username +"' and passwordd = md5('"+ password +"');")
-            return render_template('resault.html',brGrijeha=brGrijeha)
+            BP_Command("Update login SET brGrijeha = brGrijeha+ "+str(count)+" , grijesi='"+grijeh+"' where username = '"+ username +"' and passwordd = md5('"+ password +"');")
+            Pokora = pokora(brGrijeha)
+            return render_template('resault.html',brGrijeha=brGrijeha,Pokora=Pokora)
 
 
 
